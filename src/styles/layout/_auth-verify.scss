@@ -1,0 +1,23 @@
+@use '../mixins' as *;
+
+.verivy{
+  width: 630px;
+  padding-top: 96px;
+  padding-left: 120px;
+  padding-right: 72px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  &-button{
+    padding-inline: 40px;
+    width: 100%;
+    @include flex-column(24px);
+  }
+}
+.title{
+  align-items: center !important;
+  text-align: center ;
+}

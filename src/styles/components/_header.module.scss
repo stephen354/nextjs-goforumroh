@@ -1,0 +1,88 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.header{
+    @include flex-row(0);
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-right: 72px;
+    padding-bottom: 20px;
+    padding-left: 72px;
+    align-items: center;
+    background-color: #052C47;
+
+     @media (max-width: 768px) {
+        padding-inline: 40px;
+     }
+}
+
+.logo{
+    height: max-content;
+}
+
+.right{
+    @include flex-row(32px);
+    align-items: center;
+
+    @media (max-width: 768px) {
+       
+          position: absolute;
+          top: 60px;
+          right: 20px;
+          flex-direction: column;
+          width: fit-content;
+          background-color: #052C47;
+          padding: 10px;
+          border-radius: 10px;
+          transform: translateY(-30%); 
+          opacity: 0;
+          pointer-events: none; 
+          transition: transform 0.3s ease, opacity 0.3s ease;
+          gap: 5px;
+
+        &-show {
+          transform: translateY(0);   // turun masuk
+          opacity: 1;
+          pointer-events: auto;       // bisa diklik
+        }
+  }
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+     @media (max-width: 768px) {
+      display: block;
+    }
+}
+
+
+.language{
+    @include flex-row(4px);
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+.button {
+  padding: 12px 24px; // lebih ringkas
+  border-radius: 8px;
+  border: 1.5px solid $primary-color;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease; // animasi halus
+
+  &:hover {
+    background: $primary-color;
+    color: #fff;
+  }
+}

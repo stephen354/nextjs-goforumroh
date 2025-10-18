@@ -1,0 +1,32 @@
+img, svg {
+    display: block;
+}
+body{ 
+    font-size: 1.6rem; 
+}
+*{
+    font-family: 'General Sans', sans-serif;  
+    margin: 0;
+    padding: 0;                                
+}
+
+html {
+  font-size: 62.5%; 
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 56.25%; // 1rem = 9px
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 50%; // 1rem = 8px
+  }
+}
+
+h1,p{
+    margin: 0;
+    padding: 0;
+}
