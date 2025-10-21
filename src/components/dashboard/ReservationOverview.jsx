@@ -6,7 +6,7 @@ const data = [
   {
     name: 'Guy Hawkins',
     id: '#12029283',
-    image:"/dashboard/avatar/avatar.png",
+    image:"/dashboard/avatar/Avatar.png",
     date: '31 October',
     stay: '1 Nights',
     room: '5 Bedroom',
@@ -16,7 +16,7 @@ const data = [
   {
     name: 'Annette Black',
     id: '#12029283',
-    image:"/dashboard/avatar/avatar-1.png",
+    image:"/dashboard/avatar/Avatar-1.png",
     date: '31 October',
     stay: '1 Nights',
     room: '5 Bedroom',
@@ -26,7 +26,7 @@ const data = [
   {
     name: 'Eleanor Pena',
     id: '#12029283',
-    image:"/dashboard/avatar/avatar-2.png",
+    image:"/dashboard/avatar/Avatar-2.png",
     date: '31 October',
     stay: '1 Nights',
     room: '5 Bedroom',

@@ -20,12 +20,12 @@ export default function Sidebar({ isOpen,setOpen, onClose }) {
     }, []);
 
   const menuItems = [
-    { label: "Dashboard", icon: "layout.svg", url: "/dashboard" },
+    { label: "Dashboard", icon: "Layout.svg", url: "/dashboard" },
     { label: "Rates & Availability", icon: "Calendar.svg", url: "/rates" },
-    { label: "Reservation", icon: "reservation.svg", url: "/reservation" },
-    { label: "Room", icon: "bed.svg", url: "/room" },
-    { label: "Guest review", icon: "star.svg", url: "/review" },
-    { label: "Setting", icon: "setting.svg", url: "/setting" },
+    { label: "Reservation", icon: "Reservation.svg", url: "/reservation" },
+    { label: "Room", icon: "Bed.svg", url: "/room" },
+    { label: "Guest review", icon: "Star.svg", url: "/review" },
+    { label: "Setting", icon: "Setting.svg", url: "/setting" },
   ];
 
   const pathname = usePathname();
