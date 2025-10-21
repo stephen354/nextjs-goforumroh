@@ -7,6 +7,7 @@ import "@/styles/layout/_auth-verify.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+export const dynamic = 'force-dynamic';
 
 export default function verivy(){
    const searchParams = useSearchParams();
