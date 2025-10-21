@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react"
-import EmailLog from "./pages/emailLog";
+import EmailLog from "./pages/EmailLog";
 import PasswordLog from "./pages/PasswordLog"
 
 export default function Loginpage(){
