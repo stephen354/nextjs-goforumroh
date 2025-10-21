@@ -37,7 +37,7 @@ export default function Sidebar({ isOpen,setOpen, onClose }) {
     >
       {/* Close button (mobile) */}
       <div className={styles.mobileClose} onClick={onClose}>
-        <Image src={"/icons/arrow down.svg"} width={30} height={30} alt=""/>
+        <Image src={"/icons/Arrow Down.svg"} width={30} height={30} alt=""/>
       </div>
 
       {/* Logo / Brand */}
