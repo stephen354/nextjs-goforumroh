@@ -35,7 +35,7 @@ export default function Header(){
                     <Image src={"/icons/Globe.svg"} alt='icon-globe' width={24} height={24}/>
                     En
                 </div>
-                <div className={styles.line}></div>
+                  <div className={styles.divider} />
                 <button className={styles.button}>Help</button>
             </div>
         </section>

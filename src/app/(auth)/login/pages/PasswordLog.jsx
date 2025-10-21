@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
-import Input from "@/components/forms/Input";
+import Input, { PasswordInput } from "@/components/forms/Input";
 import {Button, BackButton} from "@/components/forms/Button";
 import AuthTitle from "@/components/forms/AuthTitle";
 import Terms from "@/components/forms/Terms";
 import { apiFetch } from "@/api/apiFetch";
+import { useRouter } from "next/navigation";
 
 export default function PasswordLog({ form, setForm, prevStep }){
-
+    const router = useRouter();
     const [data,setData] = useState(null);
     const [error,setError] = useState(null);
 
@@ -20,9 +21,9 @@ export default function PasswordLog({ form, setForm, prevStep }){
         setError("");
     };
 
+   // simpan token
     const handleSubmit = async () => {
         try {
-
         const res = await apiFetch({
             endpoint: '/hotel-business/login',
             method: 'POST',
@@ -33,7 +34,8 @@ export default function PasswordLog({ form, setForm, prevStep }){
         });
         console.log(res);
             if(res.success){   
-                window.location.href = "/dashboard";
+               localStorage.setItem('token', res.token); 
+               router.push("/dashboard");
             }else{
                 setError("Email or Password Invalid")
             }
@@ -46,6 +48,9 @@ export default function PasswordLog({ form, setForm, prevStep }){
     const backButton = () =>{
         prevStep(); 
     }
+    const resetPassword = () =>{
+        router.push("/reset-password")
+    }
 
     return (
         <div className="auth-left__form">
@@ -53,11 +58,10 @@ export default function PasswordLog({ form, setForm, prevStep }){
             <AuthTitle title={"Enter your password"} subtitle={<>Enter your password for <strong>{form.email}</strong></>}/>
             <div className="auth-left__form-input">
                 
-                <Input
+                <PasswordInput
                     label="Password"
                     name="password"
                     value={form.password}
-                    type="password"
                     placeholder={"Enter your Password"}
                     onChange={handleChange}
                     className={`${error ? "inputError":""}`}
@@ -66,7 +70,7 @@ export default function PasswordLog({ form, setForm, prevStep }){
                         <div className="error-message">{error}</div>
                     )}
                 <div>
-                    <button className="forgot-password">Forgot password ?</button>
+                    <button type="button" className="forgot-password" onClick={resetPassword}>Forgot password ?</button>
                 </div>  
                 <Button onClick={handleSubmit}>Continue</Button>
             </div>

@@ -100,12 +100,135 @@
         border-radius: 10px;
         border: 1px solid #D9E0E4;
         background-color: #FAFBFB;
-        outline: none; // hilangkan default outline
+        outline: none; 
         transition: all 0.3s ease;
+        font-size: 14px;
+        &::placeholder{
+            color: #9E9E9E;
+        }
 
         &:focus {
-            border-color: $primary-color; // ganti ke biru / $primary-color
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); // glow biru lembut
+            border-color: $primary-color; 
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); 
         }
     }
 }
+
+
+
+.wrapper { // Input Password
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  &-dropdown { //dropdown
+    position: relative;
+    }
+}
+
+.label {
+   font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 22px;
+    color: $secondary-color;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #D9E0E4;
+  background-color: #FAFBFB;
+  border-radius: 12px;
+  padding: 0px 16px;
+  transition: border-color 0.2s;
+  
+    &-dropdown {
+        padding: 0 12px;
+        position: relative;
+        height: 48px;
+        &:focus-within{
+            border-color: $primary-color; 
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);  // blue-500
+        }
+    }
+
+    &:focus-within {
+    border-color: $primary-color; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);  // blue-500
+    }
+}
+
+.inputPass , .inputDropdown {
+  flex-grow: 1;
+  background: transparent;
+  padding: 13px 0; // top-bottom
+  border: none;
+  outline: none;
+  font-size: 14px;
+  &::placeholder{
+      color: #9E9E9E;
+  }
+}
+
+.eyeButton {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #6b7280; // gray-500
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// Dropdown
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: #374151; // gray-700
+  min-width: 50px;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #6b7280; // gray-500
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 120px;
+  margin-top: 4px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.dropdownItem {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  list-style: none;
+  &:hover {
+    background-color: #f3f4f6; // gray-100
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 60%;
+  background-color: #d1d5db;
+  margin: 0 12px;
+}
+

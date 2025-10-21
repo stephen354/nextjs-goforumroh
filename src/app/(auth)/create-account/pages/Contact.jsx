@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Input from "@/components/forms/Input";
+import Input,{PhoneInput} from "@/components/forms/Input";
 import {BackButton, Button, ButtonLight} from "@/components/forms/Button";
 import AuthTitle from "@/components/forms/AuthTitle";
 import Terms from "@/components/forms/Terms";
@@ -8,6 +8,7 @@ import Image from "next/image";
 
 export default function Contact({ form, setForm, nextStep , prevStep  }){
 
+    const [phone, setPhone] = useState("");
     const handleChange = (e) => {
         setForm(prev => ({
         ...prev,
@@ -15,8 +16,7 @@ export default function Contact({ form, setForm, nextStep , prevStep  }){
         }));
     };
 
-      const createPass = () => {
-    // validasi manual
+    const createPass = () => {
         if (!form.email) {
         alert("Please fill in all fields");
         return;
@@ -57,13 +57,13 @@ export default function Contact({ form, setForm, nextStep , prevStep  }){
                     placeholder={"Enter your username"}
                     onChange={handleChange}
                 />
-                <Input
+                <PhoneInput
                     label="Phone Number"
                     name="phone"
                     value={form.phone}
                     type="tel"
                     placeholder={"(888) 888-8888"}
-                    onChange={handleChange}
+                    onChange={handleChange} 
                 />
                 <div className="auth-left__info">
                    <Image src={"/icons/info.png"} alt="info" width={25} height={25}/> We'll text a two-factor authentication code to this number when you sign in.

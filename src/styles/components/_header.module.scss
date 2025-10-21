@@ -70,6 +70,15 @@
     font-weight: 500;
     font-size: 14px;
 }
+.divider {
+  width: 1px;
+  align-self: stretch;   /* atau 100% kalau parent ada tinggi tetap */
+  background-color:#8295A3;
+  
+    @media (max-width: 768px) {
+      display: none;
+    }
+}
 .button {
   padding: 12px 24px; // lebih ringkas
   border-radius: 8px;
@@ -85,4 +94,12 @@
     background: $primary-color;
     color: #fff;
   }
+}
+
+.footer-auth {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  padding: 12px 0;
+  user-select: none;
 }

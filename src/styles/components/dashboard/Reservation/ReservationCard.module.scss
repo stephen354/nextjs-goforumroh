@@ -1,0 +1,91 @@
+@use "../../../mixins" as *;
+@use "../../../variables" as *;
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  padding-right: 32px;
+
+  border-bottom: 1px solid #F1F3F5;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 16px;
+  width: 100%;
+}
+
+.user {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    background: #ccc;
+    border-radius: 8px;
+    margin-right: 12px;
+  }
+
+  .name {
+    font-weight: 600;
+    font-size: 22px
+  }
+  .detailGap{
+    @include flex-column(8px);
+    width: 340px;
+  }
+  .detail {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: #616161;
+    align-items: center;
+
+    span{
+        @include flex-row(12px);
+    }
+  }
+  .point{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #F1F3F5;
+  }
+}
+.date{
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+}
+.arrival, .price{
+  flex:1;
+  min-width: max-content;
+}
+.arrival{
+    font-size: 14px;
+    font-weight: 400;
+    color: #616161;
+    @include flex-column(12px);
+    span{
+       @include flex-row(12px);
+    }
+}
+.price{
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.link {
+  font-size: 14px;
+  color: $primary-color;
+  cursor: pointer;
+  font-weight: 600;
+}

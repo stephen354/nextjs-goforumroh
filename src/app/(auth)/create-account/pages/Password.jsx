@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Input from "@/components/forms/Input";
+import Input, { PasswordInput } from "@/components/forms/Input";
 import {Button, BackButton} from "@/components/forms/Button";
 import AuthTitle from "@/components/forms/AuthTitle";
 import Terms from "@/components/forms/Terms";
@@ -45,7 +45,7 @@ export default function Password({ form, setForm, prevStep }){
             });
             console.log(res);
                 if(res.success){   
-                   router.push(`/success?email=${encodeURIComponent(form.email)}`);
+                   router.push(`/verivy?email=${encodeURIComponent(form.email)}`);
                 }else{
                     setError(res.errors)
                 }
@@ -55,7 +55,7 @@ export default function Password({ form, setForm, prevStep }){
             }
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         if(!pass.password){
             setError("Please fill in all fields ");
             return;
@@ -65,11 +65,14 @@ export default function Password({ form, setForm, prevStep }){
             setCekPass(initialForm)
             return;
         }
-        setRules(rules.every((rule) => rule.test(pass.password)));
+        const isValid = rules.every((rule) => rule.test(pass.password));
+        setRules(isValid);
+        if(!isValid){
+            return;
+        }
         form.password = pass.password;
-        console.log(form); // kirim ke API
-        router.push(`/verivy?email=${encodeURIComponent(form.email)}`);
-        // signUp();
+        await signUp();
+        
     };
 
     const backButton = () =>{
@@ -81,20 +84,18 @@ export default function Password({ form, setForm, prevStep }){
             <BackButton  onClick={backButton}/>
             <AuthTitle title={"Create password"} subtitle={"Use a minimum of 10 characters, including uppercase letters, lowercase letters and numbers."}/>
             <div className="auth-left__form-input">
-                <Input
+                <PasswordInput
                     label="Password"
                     name="password"
                     value={pass.password}
-                    type="password"
                     placeholder={"Enter your password"}
                     onChange={handleChange}
                     className={`${error ? "inputError":""}`}
                 />
-                <Input
+                <PasswordInput
                     label="Confirm Password"
                     name="confirmPassword"
                     value={pass.confirmPassword}
-                    type="password"
                     placeholder={"Enter your confirm password"}
                     onChange={handleChange}
                     className={`${error ? "inputError":""}`}

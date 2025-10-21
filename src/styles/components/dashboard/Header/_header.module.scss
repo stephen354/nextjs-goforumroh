@@ -1,0 +1,175 @@
+@import "../../../mixins";
+@import "../../../variables";
+
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    
+    gap: 1.6rem;
+    @media (max-width: 768px) {
+        padding-top: 10px;
+        padding-right: 14px;
+        padding-bottom: 12px;
+        padding-left: 14px;
+  }
+}
+
+/* LEFT SECTION */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  border-radius: 12px;
+}
+
+.gapProperty{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
+.propertyInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.4rem;
+}
+.propertyColumn{
+    display: flex;
+    flex-direction: column;
+}
+.propertyName {
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.propertyCode {
+  color: #666;
+}
+
+.link {
+  color: $primary-color;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.6rem;
+
+  &:hover {
+    color: $primary-color-hover;
+  }
+
+}
+
+/* SEARCH */
+.searchWrapper {
+  flex: 1;
+  position: relative;
+  
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.searchInput {
+  width: 320px;
+  padding: 12px 16px;
+  padding-left: 36px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+
+  @media (max-width: 1024px) {
+    width: auto;
+  }
+  &:focus {
+    outline: none;
+    border-color: #007aff;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+/* RIGHT SECTION */
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  @media (max-width: 1024px) {
+    gap: 16px;
+  }
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.userAvatar {
+  border-radius: 50%;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 500;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top:80px;
+  background: white;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 8px 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+
+  button {
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 10px 16px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: #f5f5f5;
+    }
+  }
+}

@@ -42,7 +42,7 @@ export default function CreateAccountPage({ form, setForm, nextStep  }){
                     name="email"
                     value={form.email}
                     type="email"
-                    placeholder={"Please fill in all fields"}
+                    placeholder={"Enter your email"}
                     onChange={handleChange}
                     className={`${error ? "inputError":""}`}
                 />

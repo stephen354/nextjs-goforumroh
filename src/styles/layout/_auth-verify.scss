@@ -1,22 +1,36 @@
 @use '../mixins' as *;
 
-.verivy{
-  width: 630px;
-  padding-top: 96px;
-  padding-left: 120px;
-  padding-right: 72px;
-  padding-bottom: 32px;
+.auth-verivy{
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 40px;
+  padding-top: 150px;
+  padding-inline:40px;
+}
+.verify-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
 
-  &-button{
-    padding-inline: 40px;
+.verify-content {
+  @include flex-column(40px);
+  align-items: center;
+  text-align: center;
+  max-width: 630px; // biar tidak melebar
+  width: 100%;
+}
+
+
+.verify-content button {
+  width: 548px; // sesuai design (atau 100% kalau lebih responsif)
+  max-width: 100%;
+
+  @media (max-width: 768px) {
     width: 100%;
-    @include flex-column(24px);
   }
 }
+
 .title{
   align-items: center !important;
   text-align: center ;
