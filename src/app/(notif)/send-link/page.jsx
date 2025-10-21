@@ -1,8 +1,10 @@
-
+import { Suspense } from "react";
 import SendLink from "./SendLink";
 
 export default function Page() {
   return (
-      <SendLink />
+    <Suspense fallback={<div>Loading...</div>}>
+        <SendLink />
+    </Suspense>
   );
 }
