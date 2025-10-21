@@ -68,7 +68,7 @@ export default function Header({ onMenuClick }) {
       </div>
 
         <div className={styles.icon}>
-          <Image src="/dashboard/bell.svg" alt="Notifications" width={24} height={24} />
+          <Image src="/dashboard/Bell.svg" alt="Notifications" width={24} height={24} />
         </div>
         <button className={styles.user} onClick={() => setOpen(!open)}>
           <Image

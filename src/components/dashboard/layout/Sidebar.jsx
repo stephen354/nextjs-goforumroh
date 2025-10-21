@@ -41,7 +41,7 @@ export default function Sidebar({ isOpen,setOpen, onClose }) {
       </div>
 
       {/* Logo / Brand */}
-      <div className={styles.logo}><Image src={"/logo-dashboard.png"} width={146} height={26} alt="logo"/></div>
+      <div className={styles.logo}><Image src={"/Logo-dashboard.png"} width={146} height={26} alt="logo"/></div>
 
       {/* Menu */}
       <nav className={styles.menu} ref={sidebarRef}>
